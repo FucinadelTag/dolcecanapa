@@ -1,35 +1,6 @@
 <template>
     <div>
-
-        <section class="hero has-bg-img" v-bind:style="testataStyle">
-            <div class="hero-body noleggio">
-                <div class="has-text-centered">
-                            <div class="testo box">
-                                <h1 class="title is-1 is-spaced">
-                                    Cannabis Light e CBD Legale
-                                </h1>
-                                <div class="is-size-1">
-                                    Acquista subito<br><span class="rosso is-size-1 is-italic">45% di sconto su tutti i prodotti</span>
-                                </div>
-                                <div class="is-size-4">
-                                    Promozione valida fiono al 30 Maggio
-                                </div>
-                                <!-- <div>
-                                    <div class="is-size-4">Canapa legale con <i>THC < 0,2%</i></div>
-                                    <div class="is-size-4">Venduta solo a <i>maggiori di 18 anni</i></div>
-                                    <div class="is-size-4">Prodotti da canapa <i>Biologia</i> coltivata in italia</div>
-                                </div> -->
-                                <span class="is-size-2"><i class="fas fa-phone-volume"></i> Ordina al telefono</span>
-                                <div class="callToAction has-text-centered">
-                                    <a class="button is-large" target="_blank"> 800 800 800 800</a>
-                                </div>
-                                <span class="is-size-4"><i>Dal lunedì a venerdì - dalle 9 alle 18</i></span>
-
-                            </div>
-
-                </div>
-            </div>
-        </section>
+        <testata v-bind:testataStyle="testataStyle" v-bind:titolo="titolo"/>
 
         <div class="spazio_bianco"></div>
 
@@ -47,7 +18,7 @@
                     <div class="spazio_bianco"></div>
 
                     <div class="callToAction has-text-centered">
-                        <a class="button" target="_blank">Vedi le nostre Influorescenze</a>
+                        <a class="button" href="/landing/cannabis-legale">Vedi le nostre Influorescenze</a>
                     </div>
 
                     <div class="spazio_bianco"></div>
@@ -85,7 +56,7 @@
                     <div class="spazio_bianco"></div>
 
                     <div class="callToAction has-text-centered">
-                        <a class="button" target="_blank">Vedi i nostri prodotti con CBD</a>
+                        <a class="button" href="/landing/cbd">Vedi i nostri prodotti con CBD</a>
                     </div>
 
                     <div class="spazio_bianco"></div>
@@ -94,9 +65,9 @@
                         <span class="is-size-5">Olio di Canapa puro ricco di Omega3 e Antiossidanti:</span>
 
                         <ul>
-                            <li>Riduce dolori e infiammazioni</li>
-                            <li>Dona freschezza e lucidità mentale</li>
-                            <li>Energizzante, capace di rigenerare energie e forze</li>
+                            <li>Aiuta a ridurre <strong>dolori e infiammazioni</strong></li>
+                            <li>Dona freschezza e <strong>lucidità mentale</strong></li>
+                            <li><strong>Energizzante</strong>, capace di rigenerare energie e forze</li>
                         </ul>
                     </p>
 
@@ -186,14 +157,20 @@
 </template>
 
 <script charset="utf-8">
+import testata from '~/components/testata.vue'
+
     export default {
         middleware: 'getHomeData',
+        components: {
+            testata,
+        },
         data (context) {
             //console.log(this.$store);
             return {
                 immagine_testata: this.$store.getters.getImageTestata,
                 immagine_fumo: this.$store.getters['home/getImmagineFumo'],
                 immagine_olio: this.$store.getters['home/getImmagineOlio'],
+                titolo: 'Cannabis Light e CBD Legale'
             }
         },
         computed: {
@@ -208,20 +185,5 @@
 </script>
 
 <style lang="scss">
-
-.noleggio {
-    .title {
-        font-weight: 1000;
-    }
-    .testo {
-        background-color: rgba(255,255,255,0.8);
-    }
-
-    .formPreventivo {
-        //background-color: rgba(255,255,255,0.8);
-    }
-
-
-}
 
 </style>
