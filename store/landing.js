@@ -19,7 +19,7 @@ export const getters = {
 
         let landing = state.landing;
 
-        console.log(landing.data.immagine_testata);
+        //console.log(landing.data.immagine_testata);
 
         let immagine_testata = landing.data.immagine_testata['large'];
 
@@ -33,5 +33,25 @@ export const getters = {
         let title = PrismicDom.RichText.asText(landing.data.titolo)
 
         return title;
+    },
+    getBodyById: (state) => (id) => {
+        let landing = state.landing;
+
+        let body = landing.data.body;
+
+        let slice = _.find(body, { 'slice_type': id });
+
+        return slice;
+
+    },
+    getBody: state => {
+
+        let landing = state.landing;
+
+        let body = landing.data.body;
+
+        console.log(body);
+
+        return body;
     },
 }

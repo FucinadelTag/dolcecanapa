@@ -17,10 +17,8 @@ const getLandingPage = async function (uid) {
 export default async function ({ store, route, error }) {
     let slug = route.params.slug;
 
-    console.log(route.params);
-
     let landing  = await getLandingPage (slug);
-    //console.log(landing);
+
     if (typeof landing != 'undefined'){
         store.commit('landing/SET_DATA', landing)
     }
