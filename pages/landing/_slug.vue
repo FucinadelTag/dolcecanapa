@@ -9,6 +9,8 @@
 
             <sliceCollection v-if="slice.slice_type == 'collection'"  v-bind:collection="slice" v-bind:indice="key" />
 
+            <sliceBanner v-if="slice.slice_type == 'banner'"  v-bind:banner="slice" v-bind:indice="key" />
+
             <!-- <callToActionArticolo v-if="slice.slice_type == 'riepilogo_call_to_action'"  v-bind:paragrafo="slice"/> -->
 
         </section>
@@ -30,6 +32,7 @@
 import testata from '~/components/testata.vue'
 import sliceLanding from '~/components/sliceLanding.vue'
 import sliceCollection from '~/components/sliceCollection.vue'
+import sliceBanner from '~/components/sliceBanner.vue'
 import PrismicDom from 'prismic-dom'
 
 export default {
@@ -37,7 +40,8 @@ export default {
     components: {
         testata,
         sliceLanding,
-        sliceCollection
+        sliceCollection,
+        sliceBanner
     },
     data (context) {
         //console.log(this.$store);

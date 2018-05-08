@@ -8,7 +8,7 @@
                                 {{titolo}}
                             </h1>
                             <div class="is-size-1">
-                                Acquista subito<br><span class="rosso is-size-1 is-italic">45% di sconto su tutti i prodotti</span>
+                                <span class="rosso is-size-1 is-italic">45% di sconto su tutti i prodotti</span>
                             </div>
                             <div class="is-size-4">
                                 Promozione valida fiono al 30 Maggio
@@ -18,7 +18,7 @@
                                 <div class="is-size-4">Venduta solo a <i>maggiori di 18 anni</i></div>
                                 <div class="is-size-4">Prodotti da canapa <i>Biologia</i> coltivata in italia</div>
                             </div> -->
-                            <span class="is-size-2"><i class="fas fa-phone-volume"></i> Ordina al telefono</span>
+                            <span class="is-size-2"> Ordina al telefono e paga alla consegna</span>
                             <div class="callToAction has-text-centered">
                                 <a href="tel:800 800 800 800" class="button is-large" alt="800 800 800 800"> 800 800 800 800</a>
                             </div>
