@@ -2,7 +2,7 @@
 
     <section>
         <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
-            <div class="modal-background"></div>
+            <div class="modal-background" v-on:click="closeModal"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Informazioni sul prodotto</p>
