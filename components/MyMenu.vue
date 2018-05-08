@@ -77,7 +77,7 @@ export default {
 
     .imglogo {
         padding: 0px;
-        max-height: 2.3rem;
+        max-height: 3.3rem;
     }
 
     .active {

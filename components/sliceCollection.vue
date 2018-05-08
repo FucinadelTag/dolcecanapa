@@ -3,7 +3,7 @@
 
         <!-- <h3 class="title is-2 line_bottom" v-html="PrismicDom.RichText.asText(collection.primary.titolo_collezione)"></h3> -->
         <section class="prodotti">
-            <div class="box" v-for="prodotto in getProdotti">
+            <div class="box" v-for="(prodotto, key, index) in getProdotti">
                 <h2 class="title is-3 line_bottom" v-html="PrismicDom.RichText.asText(prodotto.data.titolo)"></h2>
                 <div class="columns">
                     <div class="column is-one-third">
@@ -19,10 +19,47 @@
                         <div class="callToAction">
                             <a href="#" class="button is-large" alt="Aggiungi al carrello"><i class="fas fa-cart-plus"></i>&nbsp;Aggiungi al carrello</a>
                         </div>
-                        <div class="content box" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione)"></div>
+
+
+
+                            <!-- <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">Modal title</p>
+                                        <button class="delete" v-on:click="closeModal" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <div class="content" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione)"></div>
+                                    </section>
+                                </div>
+
+                            </div>
+                            <p>
+                                <button class="button" v-bind:prodottoId="prodotto.id" v-on:click="openModal">Show</button>
+                            </p> -->
+
+                            <div class="content box" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione_breve)"></div>
+                            <descrizioneProdotto v-if="prodotto.data.descrizione.length > 0 && prodotto.data.descrizione[0].text.length > 0"  v-bind:prodotto="prodotto"/>
+
+
+
+
+
 
                     </div>
                 </div>
+
+                <!-- <h3 class="title is-4 line_bottom">Descrizione</h3>
+                <div class="columns is-centered">
+                    <div class="column is-four-fifths">
+
+                        <div class="content" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione)"></div>
+                    </div>
+
+                </div> -->
+
+
             </div>
         </section>
     </section>
@@ -33,6 +70,7 @@
 import PrismicDom from 'prismic-dom'
 import {getDocumentById} from '~/tools/prismic.js'
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
+import descrizioneProdotto from '~/components/descrizioneProdotto.vue'
 import _ from 'lodash'
 
 export default {
@@ -44,6 +82,9 @@ export default {
             formatMoney: formatMoney,
             getPrezzoScontato: getPrezzoScontato,
         }
+    },
+    components: {
+        descrizioneProdotto,
     },
     computed: {
         // a computed getter
@@ -58,7 +99,7 @@ export default {
             }
         }
 
-    },
+    }
 }
 </script>
 

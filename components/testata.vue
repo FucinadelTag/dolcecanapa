@@ -18,11 +18,7 @@
                                 <div class="is-size-4">Venduta solo a <i>maggiori di 18 anni</i></div>
                                 <div class="is-size-4">Prodotti da canapa <i>Biologia</i> coltivata in italia</div>
                             </div> -->
-                            <span class="is-size-2"> Ordina al telefono e paga alla consegna</span>
-                            <div class="callToAction has-text-centered">
-                                <a href="tel:800 800 800 800" class="button is-large" alt="800 800 800 800"> 800 800 800 800</a>
-                            </div>
-                            <span class="is-size-4"><i>Dal lunedì a venerdì - dalle 9 alle 18</i></span>
+                            <telefonoCallToAction />
 
                         </div>
 
@@ -34,8 +30,14 @@
 </template>
 
 <script>
+import telefonoCallToAction from '~/components/telefonoCallToAction.vue'
+
+
 export default {
     props: ['testataStyle', 'titolo'],
+    components: {
+        telefonoCallToAction
+    },
 }
 </script>
 
