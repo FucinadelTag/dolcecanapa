@@ -12,7 +12,6 @@
                     <div class="content" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione)"></div>
                 </section>
             </div>
-
         </div>
         <p>
             <button class="button" v-bind:prodottoId="prodotto.id" v-on:click="openModal">Maggiori informazioni sul prodotto</button>
