@@ -64,15 +64,11 @@ export const getters = {
 
         let body = landing.data.body;
 
-        console.log(body);
-
         return body;
     },
     getProdotti: state => {
 
         let prodotti = state.list_prodotti;
-
-        console.log(prodotti);
 
         return prodotti;
     },

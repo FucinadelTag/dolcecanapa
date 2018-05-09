@@ -32,10 +32,6 @@ const manageSlice = async function (slice, key) {
     if (slice.slice_type == 'collection'){
         let prodotti = await Promise.all (_.map(slice.items, await getProdotto));
 
-        console.log('cazzocazzo');
-
-        //console.log(prodotti);
-
         let prodottiSlice = {};
         prodottiSlice[key] = prodotti;
         //

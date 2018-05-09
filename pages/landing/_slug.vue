@@ -11,11 +11,11 @@
 
             <sliceBanner v-if="slice.slice_type == 'banner'"  v-bind:banner="slice" v-bind:indice="key" />
 
-            <!-- <callToActionArticolo v-if="slice.slice_type == 'riepilogo_call_to_action'"  v-bind:paragrafo="slice"/> -->
+            <sliceIncludes v-if="slice.slice_type == 'include'"  v-bind:include="slice" v-bind:indice="key" />
+
 
         </section>
 
-        <percheDolceCanapa />
 
         <!-- <h3 class="title is-2" itemprop="name headline" v-html="PrismicDom.RichText.asText(caratteristiche.primary.tipo_caratteristiche)"></h3>
         <div class="columns is-5 is-variable is-multiline">
@@ -35,7 +35,7 @@ import testata from '~/components/testata.vue'
 import sliceLanding from '~/components/sliceLanding.vue'
 import sliceCollection from '~/components/sliceCollection.vue'
 import sliceBanner from '~/components/sliceBanner.vue'
-import percheDolceCanapa from '~/components/percheDolceCanapa.vue'
+import sliceIncludes from '~/components/sliceIncludes.vue'
 import PrismicDom from 'prismic-dom'
 
 export default {
@@ -45,7 +45,7 @@ export default {
         sliceLanding,
         sliceCollection,
         sliceBanner,
-        percheDolceCanapa
+        sliceIncludes
     },
     data (context) {
         //console.log(this.$store);
