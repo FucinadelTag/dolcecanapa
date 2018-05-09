@@ -19,7 +19,7 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button">Vedi le nostre Influorescenze</a>
+                            <a class="button">Le nostre Influorescenze</a>
                         </div>
 
                         <div class="spazio_bianco"></div>
@@ -51,7 +51,7 @@
                 <a href="/landing/cbd">
                     <div class="box">
                         <h2 class="title is-2">
-                            CBD: Olio e tanto altro
+                            Olio e gocce di CBD
                         </h2>
                         <div>
                             <img v-bind:src="immagine_olio.url" alt="" />
@@ -59,7 +59,7 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button">Vedi i nostri prodotti con CBD</a>
+                            <a class="button">I nostri olii di CBD</a>
                         </div>
 
                         <div class="spazio_bianco"></div>

@@ -20,7 +20,7 @@ const getCategorie = function (){
         //     isActive: ''
         // },
         {
-            name: 'Estratti di CBD',
+            name: 'Olio di CBD',
             link: '/landing/cbd',
             isActive: ''
         },
