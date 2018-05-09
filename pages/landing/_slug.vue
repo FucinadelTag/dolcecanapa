@@ -15,6 +15,8 @@
 
         </section>
 
+        <percheDolceCanapa />
+
         <!-- <h3 class="title is-2" itemprop="name headline" v-html="PrismicDom.RichText.asText(caratteristiche.primary.tipo_caratteristiche)"></h3>
         <div class="columns is-5 is-variable is-multiline">
             <div class="column is-half" v-for="item in caratteristiche.items">
@@ -33,6 +35,7 @@ import testata from '~/components/testata.vue'
 import sliceLanding from '~/components/sliceLanding.vue'
 import sliceCollection from '~/components/sliceCollection.vue'
 import sliceBanner from '~/components/sliceBanner.vue'
+import percheDolceCanapa from '~/components/percheDolceCanapa.vue'
 import PrismicDom from 'prismic-dom'
 
 export default {
@@ -41,7 +44,8 @@ export default {
         testata,
         sliceLanding,
         sliceCollection,
-        sliceBanner
+        sliceBanner,
+        percheDolceCanapa
     },
     data (context) {
         //console.log(this.$store);
