@@ -165,7 +165,7 @@ function resolveComponents(router) {
 }
 
 function callMiddleware (Components, context, layout) {
-  let midd = ["getSettings"]
+  let midd = ["ActiveMenu","getSettings"]
   let unknownMiddleware = false
 
   // If layout is undefined, only call global middleware

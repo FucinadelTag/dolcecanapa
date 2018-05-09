@@ -2,19 +2,68 @@ import _ from 'lodash'
 import PrismicDom from 'prismic-dom'
 
 
+const getCategorie = function (){
+    return [
+        {
+            name: 'Cannabis Legale',
+            link: '/landing/cannabis-legale',
+            isActive: ''
+        },
+        // {
+        //     name: 'Impresa',
+        //     link: 'impresa',
+        //     isActive: ''
+        // },
+        // {
+        //     name: 'Fisco',
+        //     link: 'fisco',
+        //     isActive: ''
+        // },
+        {
+            name: 'Estratti di CBD',
+            link: '/landing/cbd',
+            isActive: ''
+        },
+        // {
+        //     name: 'Famiglia',
+        //     link: 'famiglia',
+        //     isActive: ''
+        // },
+    ]
+}
+
+
 export const state = () => ({
-    settings: false
+    settings: false,
+    activeMenu: false,
+    categorie: getCategorie(),
 
 })
 
 
 export const mutations = {
     SET_SETTINGS (state, settings) {
-      state.settings = settings || false
-    }
+        state.settings = settings || false
+    },
+    SET_ACTIVE_MENU (state, active_menu) {
+        state.activeMenu = active_menu || false
+    },
+
 }
 
 export const getters = {
+    getCategorie: state => {
+
+        let menu_dataOk = state.categorie;
+
+        let finded = _.find(menu_dataOk, ['link', state.activeMenu]);
+
+        console.log(finded);
+
+        _.set (finded, 'isActive', 'active');
+
+        return menu_dataOk;
+    },
     getLogoUrl: state => {
 
         let settings = state.settings;

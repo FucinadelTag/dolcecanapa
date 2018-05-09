@@ -26,7 +26,7 @@
                     </div>
                     <div class="navbar-menu">
                         <div class="navbar-start">
-                            <!-- <a v-for="item in menuItems" class="navbar-item" v-bind:href="'/' + item.link" v-bind:class="item.isActive">{{item.name}}</a> -->
+                            <a v-for="item in menuItems" class="navbar-item" v-bind:href="item.link" v-bind:class="item.isActive">{{item.name}}</a>
                         </div>
                     </div>
                 </nav>
@@ -54,7 +54,7 @@ export default {
     //props: ['isActive'],
     data: function () {
         return {
-            //menuItems: this.$store.getters.getCategorie,
+            menuItems: this.$store.getters.getCategorie,
             logo: this.$store.getters.getLogoUrl
         }
     }
