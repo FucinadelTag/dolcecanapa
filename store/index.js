@@ -58,8 +58,6 @@ export const getters = {
 
         let finded = _.find(menu_dataOk, ['link', state.activeMenu]);
 
-        console.log(finded);
-
         _.set (finded, 'isActive', 'active');
 
         return menu_dataOk;

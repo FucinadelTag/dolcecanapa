@@ -9,6 +9,8 @@
 
             <sliceCollection v-if="slice.slice_type == 'collection'"  v-bind:collection="slice" v-bind:indice="key" />
 
+            <sliceCollectionContenuti v-if="slice.slice_type == 'collection_contenuti'"  v-bind:collectionContenuti="slice" v-bind:indice="key" />
+
             <sliceBanner v-if="slice.slice_type == 'banner'"  v-bind:banner="slice" v-bind:indice="key" />
 
             <sliceIncludes v-if="slice.slice_type == 'include'"  v-bind:include="slice" v-bind:indice="key" />
@@ -34,6 +36,7 @@
 import testata from '~/components/testata.vue'
 import sliceLanding from '~/components/sliceLanding.vue'
 import sliceCollection from '~/components/sliceCollection.vue'
+import sliceCollectionContenuti from '~/components/sliceCollectionContenuti.vue'
 import sliceBanner from '~/components/sliceBanner.vue'
 import sliceIncludes from '~/components/sliceIncludes.vue'
 import PrismicDom from 'prismic-dom'
@@ -44,6 +47,7 @@ export default {
         testata,
         sliceLanding,
         sliceCollection,
+        sliceCollectionContenuti,
         sliceBanner,
         sliceIncludes
     },
