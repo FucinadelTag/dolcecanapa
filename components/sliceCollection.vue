@@ -19,12 +19,15 @@
                         <div class="callToAction">
                             <a href="#" class="button is-large" alt="Aggiungi al carrello"><i class="fas fa-cart-plus"></i>&nbsp;Aggiungi al carrello</a>
                         </div>
-                        <div class="spazio_bianco"></div>
-                        <table class="table is-bordered is-striped">
+
+                        <div class="content box" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione_breve)"></div>
+                        <descrizioneProdotto v-if="prodotto.data.descrizione.length > 0 && prodotto.data.descrizione[0].text.length > 0"  v-bind:prodotto="prodotto"/>
+
+                        <table class="table">
                             <tbody>
                                 <tr v-if="prodotto.data.tipo_di_canapa.length > 0 && prodotto.data.tipo_di_canapa[0].text.length > 0">
-                                    <td style="width: 200px;">
-                                        <i>Tipo di canapa</i>
+                                    <td style="width: 170px;">
+                                        <i>Tipo di canapa:</i>
                                     </td>
                                     <th>
                                         <span v-html="PrismicDom.RichText.asText(prodotto.data.tipo_di_canapa)"></span>
@@ -33,7 +36,7 @@
 
                                 <tr v-if="prodotto.data.percentuale_thc.length > 0 && prodotto.data.percentuale_thc[0].text.length > 0">
                                     <td>
-                                        <i>Percentuale di THC</i>
+                                        <i>Percentuale di THC:</i>
                                     </td>
                                     <th>
                                         <span v-html="PrismicDom.RichText.asText(prodotto.data.percentuale_thc)"></span>
@@ -41,7 +44,7 @@
                                 </tr>
                                 <tr v-if="prodotto.data.percentuale_cbd.length > 0 && prodotto.data.percentuale_cbd[0].text.length > 0">
                                     <td>
-                                        <i>Percentuale di CBD</i>
+                                        <i>Percentuale di CBD:</i>
                                     </td>
                                     <th>
                                         <span v-html="PrismicDom.RichText.asText(prodotto.data.percentuale_cbd)"></span>
@@ -49,7 +52,7 @@
                                 </tr>
                                 <tr v-if="prodotto.data.quantita_contenuto.length > 0 && prodotto.data.quantita_contenuto[0].text.length > 0">
                                     <td>
-                                        <i>Quantita</i>
+                                        <i>Quantita:</i>
                                     </td>
                                     <th>
                                         <span v-html="PrismicDom.RichText.asText(prodotto.data.quantita_contenuto)"></span>
@@ -72,8 +75,6 @@
                             </div> -->
                         </table>
 
-                        <div class="spazio_bianco"></div>
-
 
 
                             <!-- <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
@@ -93,8 +94,7 @@
                                 <button class="button" v-bind:prodottoId="prodotto.id" v-on:click="openModal">Show</button>
                             </p> -->
 
-                            <div class="content box" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione_breve)"></div>
-                            <descrizioneProdotto v-if="prodotto.data.descrizione.length > 0 && prodotto.data.descrizione[0].text.length > 0"  v-bind:prodotto="prodotto"/>
+
 
 
 
