@@ -15,7 +15,6 @@
 
             <sliceIncludes v-if="slice.slice_type == 'include'"  v-bind:include="slice" v-bind:indice="key" />
 
-
         </section>
 
 
@@ -59,6 +58,8 @@ export default {
             titolo: this.$store.getters['landing/getTitle'],
             id: this.$store.getters['landing/getId'],
             body: this.$store.getters['landing/getBody'],
+            landing: this.$store.getters['landing/getLanding'],
+            mainDescription: this.$store.getters.getDescription
         }
     },
     computed: {
@@ -69,6 +70,14 @@ export default {
             return styleString;
         }
     },
+    head () {
+        return {
+            title:  this.landing.data.meta_title != null ? this.landing.data.meta_title : PrismicDom.RichText.asText(this.titolo),
+            meta: [
+                { hid: 'description', name: 'description', content: this.landing.data.meta_description != null ? this.landing.data.meta_description : this.mainDescription }
+            ]
+        }
+    }
 }
 </script>
 

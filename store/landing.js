@@ -66,6 +66,12 @@ export const getters = {
 
         return body;
     },
+    getLanding: state => {
+
+        let landing = state.landing;
+
+        return landing;
+    },
     getProdotti: state => {
 
         let prodotti = state.list_prodotti;
