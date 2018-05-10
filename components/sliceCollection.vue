@@ -10,15 +10,9 @@
                         <img v-bind:src="prodotto.data.immagini[0].immagine.Quadrata.url" alt="" />
                     </div>
                     <div class="column">
-                        <span class="leggero">Codice prodotto: </span><span class="leggero is-medium">{{prodotto.uid}}</span><span class="leggero"> | Prezzo di partenza: </span><span class="leggero prezzoOriginale">{{formatMoney(prodotto.data.prezzo)}}</span>
-                        <br>
-                        <span><strong>Offerta</strong>: </span><span class="prezzo">{{getPrezzoScontato(prodotto.data).offerta}}</span> <span class="sconto rosso">(Sconto del {{prodotto.data.percentuale_sconto}}%)</span>
-                        <br>
-                        <span class="leggero">Risparmi: {{getPrezzoScontato(prodotto.data).importoSconto}}</span> - <span class="dataFinePromo">Fino al 30 Maggio 2018</span>
 
-                        <div class="callToAction">
-                            <a href="#" class="button is-large" alt="Aggiungi al carrello"><i class="fas fa-cart-plus"></i>&nbsp;Aggiungi al carrello</a>
-                        </div>
+                        <snipcartAddCart v-bind:prodotto="prodotto" />
+
 
                         <div class="content box" v-html="PrismicDom.RichText.asHtml(prodotto.data.descrizione_breve)"></div>
                         <descrizioneProdotto v-if="prodotto.data.descrizione.length > 0 && prodotto.data.descrizione[0].text.length > 0"  v-bind:prodotto="prodotto"/>
@@ -125,6 +119,7 @@ import PrismicDom from 'prismic-dom'
 import {getDocumentById} from '~/tools/prismic.js'
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import descrizioneProdotto from '~/components/descrizioneProdotto.vue'
+import snipcartAddCart from '~/components/snipcartAddCart.vue'
 import _ from 'lodash'
 
 export default {
@@ -133,12 +128,13 @@ export default {
         return {
             PrismicDom: PrismicDom,
             prodottiArray: this.$store.getters['landing/getProdotti'],
-            formatMoney: formatMoney,
-            getPrezzoScontato: getPrezzoScontato,
+            
         }
     },
     components: {
         descrizioneProdotto,
+        snipcartAddCart
+
     },
     computed: {
         // a computed getter

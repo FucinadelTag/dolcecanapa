@@ -8,7 +8,10 @@ module.exports = {
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700' }
+            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700' },
+            //{ rel: 'script', src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js' },
+            //{ rel: 'script', src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js' , 'data-api-key':'ZTRhNzNmNTktMjU1My00YWZlLWExZDctNTczN2Y5NmM2NGNmNjM2NjE1Nzk1Njg1OTI3MzI5', id:'snipcart'},
+            { rel: 'stylesheet', href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css' },
         ]
     },
     loading: { color: '#3B8070' },

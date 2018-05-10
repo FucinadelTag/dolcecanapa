@@ -17,7 +17,8 @@ const getPrezzoScontato = function (datiProdotto) {
     let formattedImportoSconto = formatMoney (importoSconto);
 
     return {
-        offerta: formattedOfferta,
+        offerta: offerta,
+        offertaFormatted: formattedOfferta,
         importoSconto: formattedImportoSconto
     }
 
