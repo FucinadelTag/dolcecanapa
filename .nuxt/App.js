@@ -13,7 +13,7 @@ let layouts = {
 let resolvedLayouts = {}
 
 export default {
-  head: {"title":"Dolce Canapa - CBD","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Open+Sans:400,400i,700"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdn.snipcart.com\u002Fthemes\u002F2.0\u002Fbase\u002Fsnipcart.min.css"}],"style":[],"script":[]},
+  head: {"title":"Dolce Canapa - CBD","htmlAttrs":{"lang":"it"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Ffonts.googleapis.com\u002Fcss?family=Open+Sans:400,400i,700"},{"rel":"stylesheet","href":"https:\u002F\u002Fcdn.snipcart.com\u002Fthemes\u002F2.0\u002Fbase\u002Fsnipcart.min.css"}],"style":[],"script":[]},
   render(h, props) {
     const loadingEl = h('nuxt-loading', { ref: 'loading' })
     const layoutEl = h(this.layout || 'nuxt')

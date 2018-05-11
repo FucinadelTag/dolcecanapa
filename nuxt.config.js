@@ -1,6 +1,9 @@
 module.exports = {
     head: {
         title: 'Dolce Canapa - CBD',
+        htmlAttrs: {
+            lang: 'it',
+        },
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
