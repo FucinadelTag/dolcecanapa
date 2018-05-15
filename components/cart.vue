@@ -1,6 +1,6 @@
 <template lang="html">
-    <section>
-        Carrello
+    <section v-if="cart" class="">
+        <i class="fas fa-shopping-cart"></i>&nbsp;Carrello <span></span>
     </section>
 
 </template>
@@ -17,14 +17,29 @@ export default {
             cart: false
         }
     },
-    created: function () {
+    mounted () {
+        let cartId = this.$session.get('cartId');
 
-        axios.get('http://localhost:3000/api/getCart/123')
-        .then(response => this.cart = response.cart)
+        if (typeof cartId == 'undefined') {
+            cartId = uuidv1();
+            this.$session.set('cartId', cartId);
+        }
+
+        axios.get('http://localhost:3000/api/getCart/' + cartId)
+            .then(response => this.cart = response.data.cart)
             .catch(function (error) {
                 console.log(error);
-            });
+        });
+
     }
+
+    // created: function () {
+    //     axios.get('http://localhost:3000/api/getCart/123')
+    //     .then(response => this.cart = response.cart)
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
 }
 </script>
 

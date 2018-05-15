@@ -8,7 +8,7 @@ export const state = () => ({
 
 
 export const mutations = {
-    SET_DATA (state, dati) {
+    SET_CART (state, dati) {
       state.cart = cart || false
     }
 }
@@ -20,6 +20,13 @@ export const getters = {
         let cart = state.cart;
 
         return cart;
+
+    },
+    getCartId: state => {
+
+        let cart = state.cart;
+
+        return cart._id;
 
     }
 }

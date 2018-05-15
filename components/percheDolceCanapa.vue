@@ -1,7 +1,7 @@
 <template lang="html">
     <section class="box">
         <div class="title is-2 line_bottom">
-            Perchè scegliere <span class="rosso">DolceCanapa.it</span>
+            Perchè scegliere <span class="verde">DolceCanapa.it</span>
         </div>
         <div class="columns is-5 is-variable is-multiline">
             <div class="column is-half">

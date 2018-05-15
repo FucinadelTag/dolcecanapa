@@ -7,7 +7,7 @@
         <span class="leggero">Risparmi: {{getPrezzoScontato(prodotto.data).importoSconto}}</span> - <span class="dataFinePromo">Fino al 30 Maggio 2018</span>
 
         <div class="callToAction">
-            <a href="#" class="button is-large snipcart-add-item"
+            <a href="#"  v-on:click="addToCart()" class="button is-large snipcart-add-item"
                 data-item-url="/"
                 v-bind:data-item-name="PrismicDom.RichText.asText(prodotto.data.titolo)"
                 v-bind:data-item-price="getPrezzoScontato(prodotto.data).offerta"
@@ -34,6 +34,23 @@ export default {
             getPrezzoScontato: getPrezzoScontato,
         }
     },
+    methods: {
+        addToCart: function () {
+            console.log(this.prodotto.uid);
+
+            // axios.post('/user', {
+            //     firstName: 'Fred',
+            //     lastName: 'Flintstone'
+            // })
+            // .then(function (response) {
+            //     console.log(response);
+            // })
+            // .catch(function (error) {
+            //     console.log(error);
+            // });
+
+        }
+    }
 }
 </script>
 
