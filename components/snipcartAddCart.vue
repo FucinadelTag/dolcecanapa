@@ -23,6 +23,7 @@
 <script>
 import PrismicDom from 'prismic-dom'
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
+import axios from 'axios'
 
 
 export default {
@@ -39,19 +40,18 @@ export default {
         addToCart: function () {
             console.log(this.prodotto.uid);
 
-            console.log(this.cart);
+            console.log(this.cart._id);
 
 
-            // axios.post('http://localhost:3000/api/getCart/' + cartId, {
-            //     firstName: 'Fred',
-            //     lastName: 'Flintstone'
-            // })
-            // .then(function (response) {
-            //     console.log(response);
-            // })
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
+            axios.post('http://localhost:3000/api/addProduct/' + this.cart._id, {
+                prodotto: this.prodotto,
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
         }
     }

@@ -22,8 +22,8 @@ module.exports = {
         [
             'nuxt-sass-resources-loader',
             './assets/scss/variables.scss',
-            ['@nuxtjs/cookie-universal-nuxt', { expires: 60 * 60 * 24 * 365 }],
-        ]
+        ],
+        ['cookie-universal-nuxt']
     ],
     css: [
         {src: '~/assets/scss/main.scss', lang: 'scss'}

@@ -12,6 +12,7 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
+import nuxt_plugin_cookieuniversalnuxt_6396b92a from 'nuxt_plugin_cookieuniversalnuxt_6396b92a' // Source: ./cookie-universal-nuxt.js
 import nuxt_plugin_iconFont_46070458 from 'nuxt_plugin_iconFont_46070458' // Source: ../plugins/iconFont.js (ssr: false)
 import nuxt_plugin_iubenda_bea26a1c from 'nuxt_plugin_iubenda_bea26a1c' // Source: ../plugins/iubenda.js (ssr: false)
 import nuxt_plugin_analitycs_6ccf8208 from 'nuxt_plugin_analitycs_6ccf8208' // Source: ../plugins/analitycs.js (ssr: false)
@@ -153,6 +154,7 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
+  if (typeof nuxt_plugin_cookieuniversalnuxt_6396b92a === 'function') await nuxt_plugin_cookieuniversalnuxt_6396b92a(app.context, inject)
   
   if (process.browser) { 
     if (typeof nuxt_plugin_iconFont_46070458 === 'function') await nuxt_plugin_iconFont_46070458(app.context, inject)
