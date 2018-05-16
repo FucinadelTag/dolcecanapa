@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const _09d24726 = () => import('../pages/grazie.vue' /* webpackChunkName: "pages/grazie" */).then(m => m.default || m)
 const _016f0548 = () => import('../pages/landing/_slug.vue' /* webpackChunkName: "pages/landing/_slug" */).then(m => m.default || m)
 const _25f5e29c = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -64,6 +65,11 @@ export function createRouter () {
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
     routes: [
+		{
+			path: "/grazie",
+			component: _09d24726,
+			name: "grazie"
+		},
 		{
 			path: "/landing/:slug?",
 			component: _016f0548,

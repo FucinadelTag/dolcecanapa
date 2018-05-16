@@ -14,6 +14,7 @@ import { createStore } from './store.js'
 /* Plugins */
 import nuxt_plugin_iconFont_46070458 from 'nuxt_plugin_iconFont_46070458' // Source: ../plugins/iconFont.js (ssr: false)
 import nuxt_plugin_iubenda_bea26a1c from 'nuxt_plugin_iubenda_bea26a1c' // Source: ../plugins/iubenda.js (ssr: false)
+import nuxt_plugin_analitycs_6ccf8208 from 'nuxt_plugin_analitycs_6ccf8208' // Source: ../plugins/analitycs.js (ssr: false)
 
 
 // Component: <no-ssr>
@@ -156,6 +157,7 @@ async function createApp (ssrContext) {
   if (process.browser) { 
     if (typeof nuxt_plugin_iconFont_46070458 === 'function') await nuxt_plugin_iconFont_46070458(app.context, inject)
     if (typeof nuxt_plugin_iubenda_bea26a1c === 'function') await nuxt_plugin_iubenda_bea26a1c(app.context, inject)
+    if (typeof nuxt_plugin_analitycs_6ccf8208 === 'function') await nuxt_plugin_analitycs_6ccf8208(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
