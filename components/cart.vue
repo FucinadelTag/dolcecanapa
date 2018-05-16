@@ -14,24 +14,27 @@ import axios from 'axios';
 export default {
     data: function () {
         return {
-            cart: false
+            cart: this.$store.getters['cart/getCart'],
         }
     },
-    mounted () {
-        let cartId = this.$session.get('cartId');
-
-        if (typeof cartId == 'undefined') {
-            cartId = uuidv1();
-            this.$session.set('cartId', cartId);
-        }
-
-        axios.get('http://localhost:3000/api/getCart/' + cartId)
-            .then(response => this.cart = response.data.cart)
-            .catch(function (error) {
-                console.log(error);
-        });
-
-    }
+    // mounted () {
+    //     let cartId = this.$session.get('cartId');
+    //
+    //     if (typeof cartId == 'undefined') {
+    //         cartId = uuidv1();
+    //         this.$session.set('cartId', cartId);
+    //     }
+    //
+    //     axios.get('http://localhost:3000/api/getCart/' + cartId)
+    //         .then(response => {
+    //             this.cart = response.data.cart;
+    //             this.$store.commit('cart/SET_CART', response.data.cart)
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    //
+    // }
 
     // created: function () {
     //     axios.get('http://localhost:3000/api/getCart/123')

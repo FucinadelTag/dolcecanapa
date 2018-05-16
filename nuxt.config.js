@@ -22,6 +22,7 @@ module.exports = {
         [
             'nuxt-sass-resources-loader',
             './assets/scss/variables.scss',
+            ['@nuxtjs/cookie-universal-nuxt', { expires: 60 * 60 * 24 * 365 }],
         ]
     ],
     css: [
@@ -39,14 +40,13 @@ module.exports = {
     ],
     plugins: [
         { src: '~plugins/iconFont.js', ssr: false },
-        { src: '~plugins/session.js', ssr: false },
-
+        { src: '~plugins/iubenda.js', ssr: false },
     ],
     router: {
-        middleware: ['ActiveMenu', 'getSettings']
+        middleware: ['ActiveMenu', 'getSettings', 'cart']
     },
     build: {
-        vendor: ['vue-session', 'axios'],
+        vendor: ['axios'],
         postcss: {
             plugins: {
                 'postcss-custom-properties': false,

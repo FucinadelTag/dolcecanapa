@@ -19,19 +19,19 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button">Le nostre Influorescenze</a>
+                            <a class="button">Scopri le infiorescenze</a>
                         </div>
 
                         <div class="spazio_bianco"></div>
                         <p>
-                            <span class="is-size-5">Influorescenze ad uso tecnico:</span>
+                            <span class="is-size-5">Infiorescenze ad uso tecnico:</span>
 
                             <ul>
                                 <li>
-                                    HTC al di sotto dello 0,2% - <strong>Legale in italia</strong>
+                                    THC al di sotto dello 0,2% - <strong>Legale in Italia</strong>
                                 </li>
                                 <li>
-                                    Influorescenze <strong>100% Italiane</strong>
+                                    Infiorescenze <strong>100% Italiane</strong>
                                 </li>
                                 <li>
                                     Canapa biologica Certificata <strong>priva di metalli pesanti e pesticidi</strong>
@@ -51,7 +51,7 @@
                 <a href="/landing/cbd">
                     <div class="box">
                         <h2 class="title is-2">
-                            Olio e gocce di CBD
+                            Capsule ed Olio di CBD
                         </h2>
                         <div>
                             <img v-bind:src="immagine_olio.url" alt="" />
@@ -59,7 +59,7 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button">I nostri olii di CBD</a>
+                            <a class="button">Scopri gli Olii di CBD</a>
                         </div>
 
                         <div class="spazio_bianco"></div>
@@ -70,7 +70,7 @@
                             <ul>
                                 <li>Aiuta a ridurre <strong>dolori e infiammazioni</strong></li>
                                 <li>Dona freschezza e <strong>lucidità mentale</strong></li>
-                                <li><strong>Energizzante</strong>, capace di rigenerare energie e forze</li>
+                                <li><strong>Energizzante</strong>, dona forza ed energia all'organismo</li>
                             </ul>
                         </p>
 

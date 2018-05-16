@@ -9,7 +9,7 @@ export const state = () => ({
 
 export const mutations = {
     SET_CART (state, dati) {
-      state.cart = cart || false
+      state.cart = dati || false
     }
 }
 

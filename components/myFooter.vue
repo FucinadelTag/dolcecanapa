@@ -8,10 +8,7 @@
                         Chi siamo
                     </p>
                     <p>
-                        DcolceCanapa.it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nibh dui, accumsan eget dui nec, placerat aliquet arcu. In sit amet auctor justo. Cras nec purus mauris. Duis nec turpis lacus. Etiam felis purus, volutpat sed facilisis quis, fermentum in massa.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nibh dui, accumsan eget dui nec, placerat aliquet arcu. In sit amet auctor justo. Cras nec purus mauris. Duis nec turpis lacus. Etiam felis purus, volutpat sed facilisis quis, fermentum in massa.
+                        DolceCanapa.it è un team italiano di appassionati ed esperti nella lavorazione e vendita della cannabis legale in Italia.
                     </p>
                 </div>
                 <div class="column">

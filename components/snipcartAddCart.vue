@@ -32,13 +32,17 @@ export default {
             PrismicDom: PrismicDom,
             formatMoney: formatMoney,
             getPrezzoScontato: getPrezzoScontato,
+            cart: this.$store.getters['cart/getCart'],
         }
     },
     methods: {
         addToCart: function () {
             console.log(this.prodotto.uid);
 
-            // axios.post('/user', {
+            console.log(this.cart);
+
+
+            // axios.post('http://localhost:3000/api/getCart/' + cartId, {
             //     firstName: 'Fred',
             //     lastName: 'Flintstone'
             // })
