@@ -3,16 +3,18 @@ import PrismicDom from 'prismic-dom'
 
 
 export const state = () => ({
-    cart: false
+    cart: false,
+    importo: false
 })
-
 
 export const mutations = {
     SET_CART (state, dati) {
-      state.cart = dati || false
+        state.cart = dati || false
+    },
+    SET_IMPORTO (state, dati) {
+        state.importo = dati || false
     }
 }
-
 
 export const getters = {
     getCart: state => {
@@ -20,6 +22,13 @@ export const getters = {
         let cart = state.cart;
 
         return cart;
+
+    },
+    getImporto: state => {
+
+        let importo = state.importo;
+
+        return importo;
 
     },
     getCartId: state => {

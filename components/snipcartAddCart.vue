@@ -15,6 +15,19 @@
                 <i class="fa fa-cart-plus"></i> &nbsp;Aggiungi al carrello
             </a>
         </div>
+
+        <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
+            <div class="modal-background" v-on:click="closeModal"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Prodotto aggiunto con successo</p>
+                    <button class="delete" v-on:click="closeModal" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="content">Prodotto aggiunto con successo</div>
+                </section>
+            </div>
+        </div>
     </section>
 
 
@@ -26,6 +39,21 @@ import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import axios from 'axios'
 
 
+const prepareItem = function (prodotto){
+    let item = {
+        _id: prodotto.id,
+        sku: prodotto.uid,
+        nome: PrismicDom.RichText.asText(prodotto.data.titolo),
+        prezzo: prodotto.data.prezzo,
+        percentuale_sconto: prodotto.data.percentuale_sconto,
+        descrizione: PrismicDom.RichText.asHtml(prodotto.data.descrizione_breve),
+        immagine: prodotto.data.immagini[0].immagine.Quadrata.url,
+    }
+
+    return item;
+}
+
+
 export default {
     props: ['prodotto'],
     data: function () {
@@ -34,25 +62,31 @@ export default {
             formatMoney: formatMoney,
             getPrezzoScontato: getPrezzoScontato,
             cart: this.$store.getters['cart/getCart'],
+            showModal: false,
         }
     },
     methods: {
         addToCart: function () {
-            console.log(this.prodotto.uid);
+            // let item = prepareItem (this.prodotto);
+            //
+            // const store = this.$store;
+            // var self = this;
+            //
+            // axios.post('http://localhost:3000/api/addProduct/' + this.cart._id, {
+            //     item: item,
+            // })
+            // .then(function (response) {
+            //     self.showModal = true;
+            //     console.log(self.showModal)
+            //     store.commit('cart/SET_IMPORTO', response.data.importo);
+            // })
+            // .catch(function (error) {
+            //     console.log(error);
+            // });
 
-            console.log(this.cart._id);
-
-
-            axios.post('http://localhost:3000/api/addProduct/' + this.cart._id, {
-                prodotto: this.prodotto,
-            })
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-
+        },
+        closeModal: function () {
+            this.showModal = false;
         }
     }
 }

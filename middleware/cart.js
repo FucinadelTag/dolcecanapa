@@ -13,11 +13,12 @@ export default function ({ store, route, app }) {
         });
     }
 
-    axios.get('http://localhost:3000/api/getCart/' + cartId)
-        .then(response => {
-            store.commit('cart/SET_CART', response.data.cart)
-        })
-        .catch(function (error) {
-            console.log(error);
-    });
+    // axios.get('http://localhost:3000/api/getCart/' + cartId)
+    //     .then(response => {
+    //         store.commit('cart/SET_CART', response.data.cart)
+    //         store.commit('cart/SET_IMPORTO', response.data.importo)
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    // });
 }
