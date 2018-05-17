@@ -66,25 +66,25 @@ export default {
         }
     },
     methods: {
-        addToCart: function () {
-            // let item = prepareItem (this.prodotto);
-            //
-            // const store = this.$store;
-            // var self = this;
-            //
-            // axios.post('http://localhost:3000/api/addProduct/' + this.cart._id, {
-            //     item: item,
-            // })
-            // .then(function (response) {
-            //     self.showModal = true;
-            //     console.log(self.showModal)
-            //     store.commit('cart/SET_IMPORTO', response.data.importo);
-            // })
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
-
-        },
+        // addToCart: function () {
+        //     let item = prepareItem (this.prodotto);
+        //
+        //     const store = this.$store;
+        //     var self = this;
+        //
+        //     axios.post('http://localhost:3000/api/addProduct/' + this.cart._id, {
+        //         item: item,
+        //     })
+        //     .then(function (response) {
+        //         self.showModal = true;
+        //         console.log(self.showModal)
+        //         store.commit('cart/SET_IMPORTO', response.data.importo);
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     });
+        //
+        // },
         closeModal: function () {
             this.showModal = false;
         }
