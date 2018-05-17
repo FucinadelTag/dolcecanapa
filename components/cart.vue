@@ -10,7 +10,7 @@
 <script>
 import uuidv1 from 'uuid/v1';
 import axios from 'axios';
-import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
+import {formatMoney} from '~/tools/money_format.js'
 
 
 export default {

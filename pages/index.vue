@@ -23,7 +23,7 @@
                         </div>
 
                         <div class="spazio_bianco"></div>
-                        <p>
+                        <div>
                             <span class="is-size-5">Infiorescenze ad uso tecnico:</span>
 
                             <ul>
@@ -37,7 +37,7 @@
                                     Canapa biologica Certificata <strong>priva di metalli pesanti e pesticidi</strong>
                                 </li>
                             </ul>
-                        </p>
+                        </div>
                         <p class="leggero">
                             Non è un prodotto medicinale, alimentare o da combustione
                         </p>
@@ -64,7 +64,7 @@
 
                         <div class="spazio_bianco"></div>
 
-                        <p>
+                        <div>
                             <span class="is-size-5">Olio di Canapa puro ricco di Omega3 e Antiossidanti:</span>
 
                             <ul>
@@ -72,7 +72,7 @@
                                 <li>Dona freschezza e <strong>lucidità mentale</strong></li>
                                 <li><strong>Energizzante</strong>, dona forza ed energia all'organismo</li>
                             </ul>
-                        </p>
+                        </div>
 
 
 
