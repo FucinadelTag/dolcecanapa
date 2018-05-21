@@ -83,7 +83,7 @@ export default {
 
         },
         getLandingUrl: function () {
-            let url = "https:www.dolcecanapa.it/landing/" + this.landing.uid;
+            let url = "https://www.dolcecanapa.it/landing/" + this.landing.uid;
 
             return url;
 
