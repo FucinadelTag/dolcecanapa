@@ -51,7 +51,7 @@
                 <a href="/landing/cbd">
                     <div class="box">
                         <h2 class="title is-2">
-                            Capsule ed Olio di CBD
+                            Capsule e Olio di CBD
                         </h2>
                         <div>
                             <img v-bind:src="immagine_olio.url" alt="" />

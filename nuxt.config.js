@@ -47,7 +47,7 @@ module.exports = {
         middleware: ['ActiveMenu', 'getSettings', 'cart']
     },
     build: {
-        vendor: ['axios'],
+        vendor: ['axios',  'moment'],
         postcss: {
             plugins: {
                 'postcss-custom-properties': false,

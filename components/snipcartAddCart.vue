@@ -1,10 +1,10 @@
 <template lang="html">
     <section>
-        <span class="leggero">Codice prodotto: </span><span class="leggero is-medium">{{prodotto.uid}}</span><span class="leggero"> | Prezzo di partenza: </span><span class="leggero prezzoOriginale">{{formatMoney(prodotto.data.prezzo)}}</span>
+        <span class="leggero">Codice prodotto: </span><span class="leggero is-medium">{{prodotto.uid}}</span><span class="leggero">
         <br>
         <span><strong>Offerta</strong>: </span><span class="prezzo">{{getPrezzoScontato(prodotto.data).offertaFormatted}}</span> <span class="sconto rosso">(Sconto del {{prodotto.data.percentuale_sconto}}%)</span>
         <br>
-        <span class="leggero">Risparmi: {{getPrezzoScontato(prodotto.data).importoSconto}}</span> - <span class="dataFinePromo">Fino al 30 Maggio 2018</span>
+        <span class="leggero">Prezzo di partenza: </span><span class="prezzoOriginale">{{formatMoney(prodotto.data.prezzo)}}</span> | Risparmi: {{getPrezzoScontato(prodotto.data).importoSconto}}</span> - <span class="small">Fino al <dataPromo /></span>
 
         <div class="callToAction">
             <a href="#"  v-on:click="addToCart()" class="button is-large snipcart-add-item"
@@ -41,6 +41,7 @@
 import PrismicDom from 'prismic-dom'
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import axios from 'axios'
+import dataPromo from '~/components/dataPromo.vue'
 
 
 const prepareItem = function (prodotto){
@@ -68,6 +69,9 @@ export default {
             cart: this.$store.getters['cart/getCart'],
             showModal: false,
         }
+    },
+    components: {
+        dataPromo
     },
     computed: {
         // a computed getter

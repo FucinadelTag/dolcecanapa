@@ -4,7 +4,7 @@
 
                 <span class="sconto" v-html="PrismicDom.RichText.asText(banner.primary.frase_principale)"></span>
                 <br>
-                <i>Fino al <strong class="dataPromo" v-html="PrismicDom.RichText.asText(banner.primary.frase_fine_promozione)"></strong></i>
+                <i>Fino al <strong><dataPromo /></strong></i>
                 <br>
                 <telefonoCallToAction v-if="banner.primary.call_to_action == 'Numero Verde'" />
 
@@ -29,11 +29,13 @@
 <script>
 import PrismicDom from 'prismic-dom'
 import telefonoCallToAction from '~/components/telefonoCallToAction.vue'
+import dataPromo from '~/components/dataPromo.vue'
 
 export default {
     props: ['banner', 'indice'],
     components: {
-        telefonoCallToAction
+        telefonoCallToAction,
+        dataPromo
     },
     data: function () {
         return {

@@ -11,7 +11,7 @@
                                 <span class="rosso is-size-1 is-italic">50% di sconto su tutti i prodotti</span>
                             </div>
                             <div class="is-size-4">
-                                Promozione valida fino al 30 Maggio
+                                Promozione valida fino al <dataPromo />
                             </div>
                             <!-- <div>
                                 <div class="is-size-4">Canapa legale con <i>THC < 0,2%</i></div>
@@ -30,13 +30,15 @@
 </template>
 
 <script>
+import dataPromo from '~/components/dataPromo.vue'
 import telefonoCallToAction from '~/components/telefonoCallToAction.vue'
 
 
 export default {
     props: ['testataStyle', 'titolo'],
     components: {
-        telefonoCallToAction
+        telefonoCallToAction,
+        dataPromo
     },
 }
 </script>
