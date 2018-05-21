@@ -18,7 +18,7 @@
                                 <div class="is-size-4">Venduta solo a <i>maggiori di 18 anni</i></div>
                                 <div class="is-size-4">Prodotti da canapa <i>Biologia</i> coltivata in italia</div>
                             </div> -->
-                            <telefonoCallToAction />
+                            <!-- <telefonoCallToAction /> -->
 
                         </div>
 
