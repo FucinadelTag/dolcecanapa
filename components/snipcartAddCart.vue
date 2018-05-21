@@ -8,7 +8,7 @@
 
         <div class="callToAction">
             <a href="#"  v-on:click="addToCart()" class="button is-large snipcart-add-item"
-                data-item-url="/"
+                v-bind:data-item-url="getLandingUrl"
                 v-bind:data-item-name="PrismicDom.RichText.asText(prodotto.data.titolo)"
                 v-bind:data-item-price="getPrezzoScontato(prodotto.data).offerta"
                 v-bind:data-item-id="prodotto.id">
@@ -67,6 +67,7 @@ export default {
             formatMoney: formatMoney,
             getPrezzoScontato: getPrezzoScontato,
             cart: this.$store.getters['cart/getCart'],
+            landing: this.$store.getters['landing/getLanding'],
             showModal: false,
         }
     },
@@ -77,6 +78,12 @@ export default {
         // a computed getter
         getCartUrl: function () {
             let url = "http://localhost:3000/cart/vedi/" + this.$store.getters['cart/getCartId'];
+
+            return url;
+
+        },
+        getLandingUrl: function () {
+            let url = "https:www.dolcecanapa.it/landing/" + this.landing.uid;
 
             return url;
 
