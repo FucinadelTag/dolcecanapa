@@ -45,7 +45,7 @@
                         Privacy
                     </p>
                     <p>
-                        <a href="//www.iubenda.com/privacy-policy/8226676" class="iubenda-white no-brand iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+                        <a href="//www.iubenda.com/privacy-policy/369660" class="iubenda-white no-brand iubenda-embed" title="Privacy Policy">Privacy Policy</a>
                     </p>
                     <br>
                     <p class="has-text-centered">
