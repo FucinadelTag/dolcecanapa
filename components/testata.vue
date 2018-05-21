@@ -8,7 +8,7 @@
                                 {{titolo}}
                             </h1>
                             <div class="is-size-1">
-                                <span class="rosso is-size-1 is-italic">45% di sconto su tutti i prodotti</span>
+                                <span class="rosso is-size-1 is-italic">50% di sconto su tutti i prodotti</span>
                             </div>
                             <div class="is-size-4">
                                 Promozione valida fino al 30 Maggio
