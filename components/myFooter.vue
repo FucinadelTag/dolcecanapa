@@ -17,7 +17,7 @@
                         Dubbi o domande?
                     </p>
                     <p class="subtitle is-6">
-                        Scrivici un messaggio e ti risponderemo il prima possibile.
+                        Scrivici un messaggio<br>Ti risponderemo il prima possibile.
                     </p>
                     <section>
                         <form accept-charset="UTF-8" action="https://formkeep.com/f/4bca51bafe71" method="POST">
@@ -49,17 +49,14 @@
                     </p>
                     <br>
                     <p class="has-text-centered">
-                        <strong>DolceCanapa.net</strong><br>è un progetto di <i>Script Media Group Ltd</i>
+                        <strong>DolceCanapa.it</strong><br>è un progetto di <i>Fucina del Tag</i>
                         <p>
-                            <br> 90 Leinster Road
-                            <br>Rathmines Dublin 6
-                            <br>Vat IE​3458266BH
+                            <br>Via Cislaghi 21
+                            <br>20128 Milano
+                            <br>P.IVA 03201900960
                         </p>
 
                      </p>
-                    <p class="is-size-7">
-                        <a href="/note-legali">Note legali</a>
-                    </p>
                 </div>
 
             </div>
