@@ -6,7 +6,8 @@
                 <br>
                 <i>Fino al <strong><dataPromo /></strong></i>
                 <br>
-                <telefonoCallToAction v-if="banner.primary.call_to_action == 'Numero Verde'" />
+                <telefonoCallToAction v-if="banner.primary.call_to_action == 'numero_verde'" />
+                <acquistaCallToAction v-if="banner.primary.call_to_action == 'ordina_subito'" />
 
 
 
@@ -29,12 +30,14 @@
 <script>
 import PrismicDom from 'prismic-dom'
 import telefonoCallToAction from '~/components/telefonoCallToAction.vue'
+import acquistaCallToAction from '~/components/acquistaCallToAction.vue'
 import dataPromo from '~/components/dataPromo.vue'
 
 export default {
     props: ['banner', 'indice'],
     components: {
         telefonoCallToAction,
+        acquistaCallToAction,
         dataPromo
     },
     data: function () {

@@ -2,7 +2,7 @@
     <section class="sliceLanding">
 
         <!-- <h3 class="title is-2 line_bottom" v-html="PrismicDom.RichText.asText(collection.primary.titolo_collezione)"></h3> -->
-        <section class="prodotti">
+        <section class="prodotti" id="prodotti">
             <div class="box" v-for="(prodotto, key, index) in getProdotti">
                 <h2 class="title is-3 line_bottom" v-html="PrismicDom.RichText.asText(prodotto.data.titolo)"></h2>
                 <div class="columns">
@@ -128,7 +128,7 @@ export default {
         return {
             PrismicDom: PrismicDom,
             prodottiArray: this.$store.getters['landing/getProdotti'],
-            
+
         }
     },
     components: {
