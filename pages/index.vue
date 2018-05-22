@@ -19,7 +19,7 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button">Scopri le infiorescenze</a>
+                            <a class="button"><i class="fas fa-arrow-right"></i>&nbsp;Scopri le infiorescenze</a>
                         </div>
 
                         <div class="spazio_bianco"></div>
@@ -59,7 +59,7 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button is-small">Scopri gli Olii di CBD</a>
+                            <a class="button is-small"><i class="fas fa-arrow-right"></i>&nbsp;Scopri gli Olii di CBD</a>
                         </div>
 
                         <div class="spazio_bianco"></div>
