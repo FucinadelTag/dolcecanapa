@@ -1,35 +1,57 @@
 <template lang="html">
-    <section>
-        <span class="leggero">Codice prodotto: </span><span class="leggero is-medium">{{prodotto.uid}}</span><span class="leggero">
-        <br>
-        <span><strong>Offerta</strong>: </span><span class="prezzo">{{getPrezzoScontato(prodotto.data).offertaFormatted}}</span> <span class="sconto rosso">(Sconto del {{prodotto.data.percentuale_sconto}}%)</span>
-        <br>
-        <span class="leggero">Prezzo di partenza: </span><span class="prezzoOriginale">{{formatMoney(prodotto.data.prezzo)}}</span> | Risparmi: {{getPrezzoScontato(prodotto.data).importoSconto}}</span> - <span class="small">Fino al <dataPromo /></span>
+    <section class="cartButton">
+        <div class="columns">
+            <div class="column">
+                <span class="leggero">Codice prodotto: </span><span class="leggero is-medium">{{prodotto.uid}}</span><span class="leggero">
+                <br>
+                <span><strong>Offerta</strong>: </span><span class="prezzo">{{getPrezzoScontato(prodotto.data).offertaFormatted}}</span> <span class="sconto rosso">(Sconto del {{prodotto.data.percentuale_sconto}}%)</span>
+                <br>
+                <span class="leggero">Prezzo di partenza: </span><span class="prezzoOriginale">{{formatMoney(prodotto.data.prezzo)}}</span> | Risparmi: {{getPrezzoScontato(prodotto.data).importoSconto}}</span> - <span class="small">Fino al <dataPromo /></span>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <div class="callToAction">
+                    <a href="#"  v-on:click="addToCart()" class="button is-large snipcart-add-item"
+                        v-bind:data-item-url="getLandingUrl"
+                        v-bind:data-item-name="PrismicDom.RichText.asText(prodotto.data.titolo)"
+                        v-bind:data-item-price="getPrezzoScontato(prodotto.data).offerta"
+                        v-bind:data-item-id="prodotto.id">
+                        <i class="fa fa-cart-plus"></i> &nbsp;Aggiungi al carrello
+                    </a>
+                </div>
 
-        <div class="callToAction">
-            <a href="#"  v-on:click="addToCart()" class="button is-large snipcart-add-item"
-                v-bind:data-item-url="getLandingUrl"
-                v-bind:data-item-name="PrismicDom.RichText.asText(prodotto.data.titolo)"
-                v-bind:data-item-price="getPrezzoScontato(prodotto.data).offerta"
-                v-bind:data-item-id="prodotto.id">
-                <i class="fa fa-cart-plus"></i> &nbsp;Aggiungi al carrello
-            </a>
+            </div>
+            <div class="column is-three-fifths">
+                <div class="vantaggiBox">
+                    <span class="vantaggio"><i class="fas fa-shipping-fast"></i>&nbsp;Spedizione gratuita in 24/48 ore</span><br>
+                    <span class="vantaggio"><i class="far fa-money-bill-alt"></i>&nbsp;Pagamento alla consegna</span><br>
+                    <span class="vantaggio"><i class="fas fa-gift"></i>&nbsp;Pacco anonimo</span>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
-            <div class="modal-background" v-on:click="closeModal"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title"><i class="fas fa-shopping-cart"></i>&nbsp;Prodotto aggiunto al carrello! - {{formatMoney($store.getters['cart/getImporto'])}}</p>
-                    <button class="delete" v-on:click="closeModal" aria-label="close"></button>
-                </header>
-                <section class="modal-card-body has-text-centered">
-                    <span class="content title is-4">{{PrismicDom.RichText.asText(prodotto.data.titolo)}}</span><br> <span>è stato aggiunto al carrello!</span>
-                </section>
-                <footer class="modal-card-foot">
-                    <a v-bind:href="getCartUrl" class="button is-warning"><i class="fas fa-arrow-right"></i>&nbsp;Vai Alla Cassa</a>
-                    <button v-on:click="closeModal()" class="button"><i class="fas fa-arrow-down"></i>&nbsp;Continua gli acquisti</button>
-                </footer>
+        <div class="columns">
+            <div class="column">
+                <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
+                    <div class="modal-background" v-on:click="closeModal"></div>
+                    <div class="modal-card">
+                        <header class="modal-card-head">
+                            <p class="modal-card-title"><i class="fas fa-shopping-cart"></i>&nbsp;Prodotto aggiunto al carrello! - {{formatMoney($store.getters['cart/getImporto'])}}</p>
+                            <button class="delete" v-on:click="closeModal" aria-label="close"></button>
+                        </header>
+                        <section class="modal-card-body has-text-centered">
+                            <span class="content title is-4">{{PrismicDom.RichText.asText(prodotto.data.titolo)}}</span><br> <span>è stato aggiunto al carrello!</span>
+                        </section>
+                        <footer class="modal-card-foot">
+                            <a v-bind:href="getCartUrl" class="button is-warning"><i class="fas fa-arrow-right"></i>&nbsp;Vai Alla Cassa</a>
+                            <button v-on:click="closeModal()" class="button"><i class="fas fa-arrow-down"></i>&nbsp;Continua gli acquisti</button>
+                        </footer>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -116,5 +138,17 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+.cartButton {
+    .vantaggiBox {
+        padding: 1rem;
+        margin-right: 0.9rem;
+        background-color: $grey-ligh;
+
+        .vantaggio {
+            font-weight: 200;
+            padding-top: 0.9rem;
+        }
+    }
+}
 </style>
