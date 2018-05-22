@@ -59,7 +59,7 @@
                         <div class="spazio_bianco"></div>
 
                         <div class="callToAction has-text-centered">
-                            <a class="button">Scopri gli Olii di CBD</a>
+                            <a class="button is-small">Scopri gli Olii di CBD</a>
                         </div>
 
                         <div class="spazio_bianco"></div>
