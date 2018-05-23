@@ -19,6 +19,12 @@
                         v-bind:data-item-id="prodotto.id">
                         <i class="fa fa-cart-plus"></i> &nbsp;Aggiungi al carrello
                     </a>
+                    <div class="numeroVerde has-text-centered">
+                        <span  class="leggero">Oppure ordina al telefono</span><br>
+                        <a href="tel:800180439" class="telefono" alt="800-180-439"> 800-180-439</a>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -154,6 +160,14 @@ export default {
         .vantaggio {
             font-weight: 200;
             padding-top: 0.9rem;
+        }
+    }
+
+    .numeroVerde {
+        .telefono {
+            font-size: 140%;
+            color: $verde;
+
         }
     }
 }
