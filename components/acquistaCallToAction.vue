@@ -5,21 +5,17 @@
             <a v-on:click="clickCallToAction()" href="#prodotti" class="button is-large" alt="Ordina adesso"> Ordina adesso</a>
         </div>
     </section>
-
-
 </template>
 
 <script>
 export default {
     methods: {
         clickCallToAction: function () {
-
             ga('send', {
                 hitType: 'event',
                 eventCategory: 'CallToAction',
                 eventAction: 'ordina_subito'
             });
-
         }
     }
 }
