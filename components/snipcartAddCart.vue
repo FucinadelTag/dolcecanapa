@@ -130,6 +130,12 @@ export default {
             //     console.log(error);
             // });
 
+            ga('send', {
+                hitType: 'event',
+                eventCategory: 'Cart',
+                eventAction: 'add'
+            });
+
         },
         closeModal: function () {
             this.showModal = false;
