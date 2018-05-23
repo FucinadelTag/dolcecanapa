@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export default function ({ store, route, app }) {
 
+    let shopUid = store.state.settings.uid;
     let cartId = app.$cookies.get('cartId');
 
     if (typeof cartId == 'undefined') {
@@ -13,7 +14,7 @@ export default function ({ store, route, app }) {
         });
     }
 
-    // axios.get('http://localhost:3000/api/getCart/' + cartId)
+    // axios.get('http://localhost:3000/api/getCart/' + cartId + '/' + shopUid)
     //     .then(response => {
     //         store.commit('cart/SET_CART', response.data.cart)
     //         store.commit('cart/SET_IMPORTO', response.data.importo)

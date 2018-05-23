@@ -52,6 +52,12 @@ export const mutations = {
 }
 
 export const getters = {
+    getUid: state => {
+
+        let uid = state.settings.uid;
+
+        return uid;
+    },
     getCategorie: state => {
 
         let menu_dataOk = state.categorie;
