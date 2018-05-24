@@ -11,7 +11,7 @@
         </div>
         <div class="columns">
             <div class="column">
-                <div class="callToAction">
+                <div class="callToAction has-text-centered">
                     <a href="#"  v-on:click="addToCart()" class="button is-large snipcart-add-item"
                         v-bind:data-item-url="getLandingUrl"
                         v-bind:data-item-name="PrismicDom.RichText.asText(prodotto.data.titolo)"
@@ -19,7 +19,7 @@
                         v-bind:data-item-id="prodotto.id">
                         <i class="fa fa-cart-plus"></i> &nbsp;Aggiungi al carrello
                     </a>
-                    <div class="numeroVerde has-text-centered">
+                    <div class="numeroVerde">
                         <span  class="leggero">Oppure ordina al telefono</span><br>
                         <a href="tel:800180439" class="telefono" alt="800-180-439"> 800-180-439</a>
                     </div>
