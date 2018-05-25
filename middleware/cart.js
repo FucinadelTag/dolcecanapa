@@ -10,12 +10,19 @@ export default function ({ store, route, app }) {
     if (typeof cartId == 'undefined') {
         cartId = uuidv1();
         app.$cookies.set('cartId', cartId, {
-            maxAge: 60 * 60 * 24 * 365
+            maxAge: 60 * 60 * 24 * 365,
+            path: '/'
         });
     }
 
-    // axios.get('http://localhost:3000/api/getCart/' + cartId + '/' + shopUid)
-    //     .then(response => {
+    // let apiUrl = 'http://localhost:3000/api/getCart/' + cartId;
+    //
+    // axios.get(apiUrl, {
+    //     headers:{
+    //         addtax: false,
+    //         storeid: shopUid
+    //     }
+    // }).then(response => {
     //         store.commit('cart/SET_CART', response.data.cart)
     //         store.commit('cart/SET_IMPORTO', response.data.importo)
     //     })
