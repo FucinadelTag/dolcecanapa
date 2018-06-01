@@ -15,7 +15,6 @@
             </div>
             <MyFooter/>
         </div>
-        <myFooter/>
         <snipcartInclude/>
     </div>
 
