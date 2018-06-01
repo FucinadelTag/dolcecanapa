@@ -3,7 +3,10 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const _6ef7645c = () => import('../pages/privacy.vue' /* webpackChunkName: "pages/privacy" */).then(m => m.default || m)
+const _3823034b = () => import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */).then(m => m.default || m)
 const _09d24726 = () => import('../pages/grazie.vue' /* webpackChunkName: "pages/grazie" */).then(m => m.default || m)
+const _366c6203 = () => import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */).then(m => m.default || m)
 const _016f0548 = () => import('../pages/landing/_slug.vue' /* webpackChunkName: "pages/landing/_slug" */).then(m => m.default || m)
 const _25f5e29c = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
@@ -66,9 +69,24 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
+			path: "/privacy",
+			component: _6ef7645c,
+			name: "privacy"
+		},
+		{
+			path: "/blog",
+			component: _3823034b,
+			name: "blog"
+		},
+		{
 			path: "/grazie",
 			component: _09d24726,
 			name: "grazie"
+		},
+		{
+			path: "/blog/:slug",
+			component: _366c6203,
+			name: "blog-slug"
 		},
 		{
 			path: "/landing/:slug?",

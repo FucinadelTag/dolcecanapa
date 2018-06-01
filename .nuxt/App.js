@@ -6,6 +6,8 @@ import '../assets/scss/main.scss'
 
 let layouts = {
 
+  "_blog": () => import('../layouts/blog.vue'  /* webpackChunkName: "layouts/blog" */).then(m => m.default || m),
+
   "_default": () => import('../layouts/default.vue'  /* webpackChunkName: "layouts/default" */).then(m => m.default || m)
 
 }
