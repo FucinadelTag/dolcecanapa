@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const _6ef7645c = () => import('../pages/privacy.vue' /* webpackChunkName: "pages/privacy" */).then(m => m.default || m)
+const _6111f220 = () => import('../pages/grazie-newsletter.vue' /* webpackChunkName: "pages/grazie-newsletter" */).then(m => m.default || m)
 const _3823034b = () => import('../pages/blog/index.vue' /* webpackChunkName: "pages/blog/index" */).then(m => m.default || m)
 const _09d24726 = () => import('../pages/grazie.vue' /* webpackChunkName: "pages/grazie" */).then(m => m.default || m)
 const _366c6203 = () => import('../pages/blog/_slug.vue' /* webpackChunkName: "pages/blog/_slug" */).then(m => m.default || m)
@@ -72,6 +73,11 @@ export function createRouter () {
 			path: "/privacy",
 			component: _6ef7645c,
 			name: "privacy"
+		},
+		{
+			path: "/grazie-newsletter",
+			component: _6111f220,
+			name: "grazie-newsletter"
 		},
 		{
 			path: "/blog",

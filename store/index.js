@@ -24,6 +24,11 @@ const getCategorie = function (){
             link: '/landing/cbd',
             isActive: ''
         },
+        {
+            name: 'Blog e News',
+            link: '/blog/',
+            isActive: ''
+        },
         // {
         //     name: 'Famiglia',
         //     link: 'famiglia',

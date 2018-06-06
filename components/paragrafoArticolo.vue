@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="paragrafoArticolo">
-        <h2 v-bind:id="getSlug" class="subtitle is-3" v-if="paragrafo.primary.titolo !=''" v-html="PrismicDom.RichText.asText(paragrafo.primary.titolo)"/>
+        <h2 v-bind:id="getSlug" class="subtitle is-3" v-if="hasTitolo" v-html="PrismicDom.RichText.asText(paragrafo.primary.titolo)"/>
 
 
         <div v-if="paragrafo.primary.posizione_immagine == 'Destra'">
@@ -70,6 +70,12 @@ export default {
             } else {
                 return false
             }
+        },
+        hasTitolo: function (){
+            if (this.paragrafo.primary.titolo =='' || !this.paragrafo.primary.titolo) {
+                return false
+            }
+            return true
         },
         getSlug: function () {
 
