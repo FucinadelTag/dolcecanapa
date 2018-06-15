@@ -28,14 +28,14 @@
                         <div class="navbar-start">
                             <a v-for="item in menuItems" class="navbar-item" v-bind:href="item.link" v-bind:class="item.isActive">{{item.name}}</a>
                         </div>
-                            <div  class="navbar-item">
+                        <div  class="navbar-item">
                                 <Cart />
-                            </div>
-                            <div  class="navbar-item">
-                                <a href="#" class="snipcart-checkout navbar-item">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Carrello
-                                </a>
-                            </div>
+                        </div>
+                        <div  class="navbar-item">
+                            <a href="#" class="snipcart-checkout navbar-item">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Carrello
+                            </a>
+                        </div>
                     </div>
                 </nav>
                 <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
