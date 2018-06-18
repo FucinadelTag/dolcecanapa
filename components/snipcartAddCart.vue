@@ -124,7 +124,7 @@ export default {
             // const store = this.$store;
             // var self = this;
             //
-            // axios.post('http://localhost:3000/api/addProduct/' + this.cart._id, {
+            // axios.post('https://cart.dolcecanapa.it/api/addProduct/' + this.cart._id, {
             //     item: item,
             // })
             // .then(function (response) {

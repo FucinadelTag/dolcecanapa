@@ -9,10 +9,10 @@ export const state = () => ({
 
 export const mutations = {
     SET_CART (state, dati) {
-        state.cart = dati || false
+        state.cart = dati
     },
     SET_IMPORTO (state, dati) {
-        state.importo = dati || false
+        state.importo = dati
     }
 }
 
