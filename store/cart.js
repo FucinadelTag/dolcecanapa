@@ -21,12 +21,19 @@ export const getters = {
 
         let cart = state.cart;
 
-        return cart;
+        return cart.cart;
+
+    },
+    getCartItems: state => {
+
+        let cartItems = state.cart.items;
+
+        return cartItems;
 
     },
     getImporto: state => {
 
-        let importo = state.importo;
+        let importo = state.cart.importo;
 
         return importo;
 
@@ -35,7 +42,7 @@ export const getters = {
 
         let cart = state.cart;
 
-        return cart._id;
+        return cart.cart._id;
 
     }
 }

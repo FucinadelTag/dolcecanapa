@@ -46,17 +46,18 @@
                     <div class="modal-background" v-on:click="closeModal"></div>
                     <div class="modal-card">
                         <header class="modal-card-head">
-                            <p class="modal-card-title"><i class="fas fa-shopping-cart"></i>&nbsp;Prodotto aggiunto al carrello! - {{formatMoney($store.getters['cart/getImporto'])}}</p>
+                            <p class="modal-card-title"><i class="fas fa-shopping-cart"></i>&nbsp;Il tuo carrello! - {{formatMoney($store.getters['cart/getImporto'])}}</p>
                             <button class="delete" v-on:click="closeModal" aria-label="close"></button>
                         </header>
-                        <section class="modal-card-body has-text-centered">
-                            <span class="content title is-4">{{PrismicDom.RichText.asText(prodotto.data.titolo)}}</span><br> <span>è stato aggiunto al carrello!</span>
-                        </section>
+
+                            <cartModal/>
+
                         <footer class="modal-card-foot">
-                            <a v-bind:href="getCartUrl" class="button is-warning"><i class="fas fa-arrow-right"></i>&nbsp;Vai Alla Cassa</a>
-                            <button v-on:click="closeModal()" class="button"><i class="fas fa-arrow-down"></i>&nbsp;Continua gli acquisti</button>
+                            <button class="button" v-on:click="closeModal">Continua gli Acquisti</button>
+                            <button class="button is-success">Vai Alla Cassa</button>
                         </footer>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -70,6 +71,9 @@ import PrismicDom from 'prismic-dom'
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import axios from 'axios'
 import dataPromo from '~/components/dataPromo.vue'
+import cartModal from '~/components/cartModal.vue'
+
+const cartUrl = process.env.cartUrl;
 
 
 const prepareItem = function (prodotto){
@@ -100,12 +104,13 @@ export default {
         }
     },
     components: {
-        dataPromo
+        dataPromo,
+        cartModal
     },
     computed: {
         // a computed getter
         getCartUrl: function () {
-            let url = "http://localhost:3000/cart/vedi/" + this.$store.getters['cart/getCartId'];
+            let url = cartUrl + "/cart/vedi/" + this.$store.getters['cart/getCartId'];
 
             return url;
 
@@ -119,22 +124,22 @@ export default {
     },
     methods: {
         addToCart: function () {
-            // let item = prepareItem (this.prodotto);
-            //
-            // const store = this.$store;
-            // var self = this;
-            //
-            // axios.post('https://cart.dolcecanapa.it/api/addProduct/' + this.cart._id, {
-            //     item: item,
-            // })
-            // .then(function (response) {
-            //     self.showModal = true;
-            //     console.log(self.showModal)
-            //     store.commit('cart/SET_IMPORTO', response.data.importo);
-            // })
-            // .catch(function (error) {
-            //     console.log(error);
-            // });
+            let item = prepareItem (this.prodotto);
+
+            const store = this.$store;
+            var self = this;
+
+            axios.post(cartUrl + '/api/addProduct/' + this.cart._id, {
+                item: item,
+            })
+            .then(function (response) {
+                self.showModal = true;
+                store.commit('cart/SET_CART', response.data.cartData)
+                store.commit('cart/SET_IMPORTO', response.data.cartData.importo)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
             ga('send', {
                 hitType: 'event',

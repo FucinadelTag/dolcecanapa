@@ -11,29 +11,34 @@ const setCookieCartId = (cartId, app) => {
 
 export default async function ({ store, route, app }) {
 
-    // let shopUid = store.state.settings.uid;
-    // let cartId = app.$cookies.get('cartId');
-    //
-    // console.log(cartId);
-    //
-    // if (typeof cartId == 'undefined') {
-    //     cartId = uuidv1();
-    //     setCookieCartId (cartId, app);
-    // }
-    //
-    // let apiUrl = 'https://cart.dolcecanapa.it/api/getCart/';
-    //
-    //
-    // let response = await axios.get(apiUrl, {
-    //     headers:{
-    //         cartid: cartId,
-    //         storeid: shopUid
-    //     }
-    // })
-    //
-    // store.commit('cart/SET_CART', response.data.cart)
-    // store.commit('cart/SET_IMPORTO', response.data.importo)
-    // setCookieCartId (response.data.cart._id, app)
+    let shopUid = store.state.settings.uid;
+    let cartId = app.$cookies.get('cartId');
+    let cartUrl = process.env.cartUrl;
+
+    //console.log(cartId);
+
+    if (typeof cartId == 'undefined') {
+        cartId = uuidv1();
+        setCookieCartId (cartId, app);
+    }
+
+    //console.log(process.env.cartUrl);
+
+    let apiUrl = cartUrl + '/api/getCart/';
+
+
+    let response = await axios.get(apiUrl, {
+        headers:{
+            cartid: cartId,
+            storeid: shopUid
+        }
+    })
+
+    //console.log(response.data.cartData);
+
+    store.commit('cart/SET_CART', response.data.cartData)
+    store.commit('cart/SET_IMPORTO', response.data.cartData.importo)
+    setCookieCartId (response.data.cartData.cart._id, app)
 
     //console.log('cart');
 

@@ -55,5 +55,8 @@ module.exports = {
                 'postcss-custom-properties': false,
             }
         }
+    },
+    env: {
+        cartUrl: process.env.CART_URL || 'http://localhost:3000'
     }
 }
