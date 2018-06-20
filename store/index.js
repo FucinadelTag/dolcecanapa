@@ -41,6 +41,7 @@ const getCategorie = function (){
 export const state = () => ({
     settings: false,
     activeMenu: false,
+    showCart: false,
     categorie: getCategorie(),
 
 })
@@ -49,6 +50,9 @@ export const state = () => ({
 export const mutations = {
     SET_SETTINGS (state, settings) {
         state.settings = settings || false
+    },
+    SET_SHOWCART (state, showCart) {
+        state.showCart = showCart || false
     },
     SET_ACTIVE_MENU (state, active_menu) {
         state.activeMenu = active_menu || false
@@ -104,5 +108,11 @@ export const getters = {
         let immagine_testata = settings.data.immagine_testata['larga'];
 
         return immagine_testata;
-    }
+    },
+    getShowCart: state => {
+
+        let showCart = state.showCart;
+
+        return showCart;
+    },
 }

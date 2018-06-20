@@ -1,8 +1,10 @@
 <template lang="html">
     <section class="">
-        <a>
+        <a v-on:click="showModal">
             <i class="fas fa-shopping-cart"></i>&nbsp;Carrello <span  v-if="$store.getters['cart/getImporto']">{{formatMoney($store.getters['cart/getImporto'])}}</span>
         </a>
+
+        <cartModal />
     </section>
 
 </template>
@@ -11,6 +13,7 @@
 import uuidv1 from 'uuid/v1';
 import axios from 'axios';
 import {formatMoney} from '~/tools/money_format.js'
+import cartModal from '~/components/cartModal.vue'
 
 const cartUrl = process.env.cartUrl;
 
@@ -22,6 +25,9 @@ export default {
             formatMoney: formatMoney,
         }
     },
+    components: {
+        cartModal
+    },
     computed: {
         // a computed getter
         getCartUrl: function () {
@@ -29,6 +35,11 @@ export default {
 
             return url;
 
+        }
+    },
+    methods: {
+        showModal: function () {
+            this.$store.commit('SET_SHOWCART', true)
         }
     }
 }

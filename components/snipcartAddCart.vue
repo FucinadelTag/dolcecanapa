@@ -40,7 +40,7 @@
 
         </div>
 
-        <div class="columns">
+        <!-- <div class="columns">
             <div class="column">
                 <div v-bind:ref="prodotto.id" class="modal" v-bind:class="{ 'is-active': showModal}">
                     <div class="modal-background" v-on:click="closeModal"></div>
@@ -60,7 +60,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
 
@@ -71,7 +71,6 @@ import PrismicDom from 'prismic-dom'
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import axios from 'axios'
 import dataPromo from '~/components/dataPromo.vue'
-import cartModal from '~/components/cartModal.vue'
 
 const cartUrl = process.env.cartUrl;
 
@@ -104,8 +103,7 @@ export default {
         }
     },
     components: {
-        dataPromo,
-        cartModal
+        dataPromo
     },
     computed: {
         // a computed getter
@@ -133,7 +131,7 @@ export default {
                 item: item,
             })
             .then(function (response) {
-                self.showModal = true;
+                store.commit('SET_SHOWCART', true)
                 store.commit('cart/SET_CART', response.data.cartData)
                 store.commit('cart/SET_IMPORTO', response.data.cartData.importo)
             })
@@ -147,9 +145,6 @@ export default {
                 eventAction: 'add'
             });
 
-        },
-        closeModal: function () {
-            this.showModal = false;
         }
     }
 }
