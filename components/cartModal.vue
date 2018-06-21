@@ -4,7 +4,18 @@
         <div class="modal-background" v-on:click="closeModal"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <cartModalCallToAction />
+
+                <div class="columns">
+                    <div class="column is-11">
+                        <cartModalCallToAction />
+                    </div>
+                    <div  class="column">
+                        <button class="delete" v-on:click="closeModal" aria-label="close"></button>
+                    </div>
+
+                </div>
+
+
             </header>
 
             <section class="modal-card-body" v-if="hasItems">
@@ -25,7 +36,7 @@
 
             </section>
 
-                <footer class="modal-card-foot has-text-centered">
+                <footer class="modal-card-foot">
                     <cartModalCallToAction />
                 </footer>
 
@@ -86,4 +97,9 @@ export default {
 </script>
 
 <style lang="scss">
+.cartModal {
+    .modal-card-head {
+        display: inline;
+    }
+}
 </style>
