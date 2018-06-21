@@ -4,10 +4,7 @@
         <div class="modal-background" v-on:click="closeModal"></div>
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">
-                    <i class="fas fa-shopping-cart"></i>&nbsp;
-                    <i>Carrello:</i>&nbsp;<strong>{{formatMoney($store.getters['cart/getImporto'])}}</strong></p>
-                <button class="delete" v-on:click="closeModal" aria-label="close"></button>
+                <cartModalCallToAction />
             </header>
 
             <section class="modal-card-body" v-if="hasItems">
@@ -29,14 +26,7 @@
             </section>
 
                 <footer class="modal-card-foot has-text-centered">
-                    <div class="totaleCart">Totale: <strong>{{formatMoney($store.getters['cart/getImporto'])}}</strong></div>
-                    
-                    <a v-bind:href="getCartUrl" v-if="hasItems" class="button is-link">
-                        <span class="icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </span>
-                        <span>Vai alla Cassa</span>
-                    </a>
+                    <cartModalCallToAction />
                 </footer>
 
         </div>
@@ -59,11 +49,13 @@
 
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import cartModalRow from '~/components/cartModalRow.vue'
-const cartUrl = process.env.cartUrl;
+import cartModalCallToAction from '~/components/cartModalCallToAction.vue'
+
 
 export default {
     components: {
         cartModalRow,
+        cartModalCallToAction
     },
 
     data: function () {
@@ -82,12 +74,6 @@ export default {
 
             return false;
 
-        },
-        getCartUrl: function () {
-            let url = cartUrl + "/cart/vedi/" + this.$store.getters['cart/getCartId'];
-
-            return url;
-
         }
     },
     methods: {
@@ -100,9 +86,4 @@ export default {
 </script>
 
 <style lang="scss">
-.cartModal {
-    .totaleCart {
-        padding-right: 2rem;
-    }
-}
 </style>
