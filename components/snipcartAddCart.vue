@@ -152,9 +152,11 @@ export default {
 
 <style lang="scss">
 .cartButton {
+
     .vantaggiBox {
         padding: 1rem;
         margin-right: 0.9rem;
+        margin-bottom: 0.9rem;
         background-color: $grey-ligh;
 
         .vantaggio {

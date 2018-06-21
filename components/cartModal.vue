@@ -1,6 +1,6 @@
 <template lang="html">
 
-    <div v-bind:ref="cart._id" class="modal" v-bind:class="{ 'is-active': $store.getters.getShowCart}">
+    <div v-bind:ref="cart._id" class="modal cartModal" v-bind:class="{ 'is-active': $store.getters.getShowCart}">
         <div class="modal-background" v-on:click="closeModal"></div>
         <div class="modal-card">
             <header class="modal-card-head">
@@ -28,11 +28,17 @@
 
             </section>
 
+                <footer class="modal-card-foot has-text-centered">
+                    <div class="totaleCart">Totale: <strong>{{formatMoney($store.getters['cart/getImporto'])}}</strong></div>
+                    
+                    <a v-bind:href="getCartUrl" v-if="hasItems" class="button is-link">
+                        <span class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        <span>Vai alla Cassa</span>
+                    </a>
+                </footer>
 
-            <footer class="modal-card-foot">
-                <button class="button" v-on:click="closeModal">Continua gli Acquisti</button>
-                <button v-if="hasItems" class="button is-success">Vai Alla Cassa</button>
-            </footer>
         </div>
 
     </div>
@@ -53,6 +59,7 @@
 
 import {formatMoney, getPrezzoScontato} from '~/tools/money_format.js'
 import cartModalRow from '~/components/cartModalRow.vue'
+const cartUrl = process.env.cartUrl;
 
 export default {
     components: {
@@ -75,6 +82,12 @@ export default {
 
             return false;
 
+        },
+        getCartUrl: function () {
+            let url = cartUrl + "/cart/vedi/" + this.$store.getters['cart/getCartId'];
+
+            return url;
+
         }
     },
     methods: {
@@ -87,4 +100,9 @@ export default {
 </script>
 
 <style lang="scss">
+.cartModal {
+    .totaleCart {
+        padding-right: 2rem;
+    }
+}
 </style>
