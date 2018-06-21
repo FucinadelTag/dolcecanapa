@@ -1,7 +1,7 @@
 <template lang="html">
     <section class="">
         <a v-on:click="showModal">
-            <i class="fas fa-shopping-cart"></i>&nbsp;Carrello <span  v-if="$store.getters['cart/getImporto']">{{formatMoney($store.getters['cart/getImporto'])}}</span>
+            <i class="fas fa-shopping-cart"></i>&nbsp;Carrello <i><span class=""  v-if="$store.getters['cart/getImporto']">{{formatMoney($store.getters['cart/getImporto'])}}</span></i>
         </a>
 
         <cartModal />
