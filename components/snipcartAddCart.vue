@@ -129,6 +129,7 @@ export default {
 
             axios.post(cartUrl + '/api/addProduct/' + this.cart._id, {
                 item: item,
+                storeId: store.state.settings.uid,
             })
             .then(function (response) {
                 store.commit('SET_SHOWCART', true)
