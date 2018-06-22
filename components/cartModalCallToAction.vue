@@ -1,13 +1,29 @@
 <template lang="html">
     <section class="cartModalCallToAction">
-        <span class="totaleCart">Totale Carrello: <strong>{{formatMoney($store.getters['cart/getImporto'])}}</strong></span>
 
-        <a v-bind:href="getCartUrl" v-if="hasItems" class="button is-link">
-            <span class="icon">
-                <i class="fas fa-shopping-cart"></i>
-            </span>
-            <span>Vai alla Cassa</span>
-        </a>
+
+        <div class="callToAction">
+            <div class="columns">
+                <div class="column has-vertically-aligned-content">
+                    <span class="totaleCart title  is-5">
+                        Totale Carrello: <strong>{{formatMoney($store.getters['cart/getImporto'])}}</strong>
+                    </span>
+
+                </div>
+                <div class="column has-vertically-aligned-content">
+                    <a v-bind:href="getCartUrl" v-if="hasItems" class="button">
+                        <span class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        <span>Vai alla Cassa</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
     </section>
 
 </template>
@@ -46,6 +62,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .cartModalCallToAction {
     .totaleCart {
         padding-right: 1rem;

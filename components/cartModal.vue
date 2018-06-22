@@ -6,7 +6,10 @@
             <header class="modal-card-head">
 
                 <div class="columns">
-                    <div class="column is-11">
+                    <!-- <div class="column is-1">
+                        <p class="modal-card-title"><i class="fas fa-shopping-cart"></i></p>
+                    </div> -->
+                    <div class="column is-11 has-vertically-aligned-content">
                         <cartModalCallToAction />
                     </div>
                     <div  class="column">
@@ -36,7 +39,7 @@
 
             </section>
 
-                <footer class="modal-card-foot">
+                <footer class="modal-card-head">
                     <cartModalCallToAction />
                 </footer>
 
@@ -97,6 +100,13 @@ export default {
 </script>
 
 <style lang="scss">
+
+.column.has-vertically-aligned-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .cartModal {
     .modal-card-head {
         display: inline;
