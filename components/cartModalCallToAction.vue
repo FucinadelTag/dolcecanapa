@@ -67,5 +67,11 @@ export default {
     .totaleCart {
         padding-right: 1rem;
     }
+
+    .column.has-vertically-aligned-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 </style>

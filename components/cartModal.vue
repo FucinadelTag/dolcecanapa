@@ -101,12 +101,6 @@ export default {
 
 <style lang="scss">
 
-.column.has-vertically-aligned-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .cartModal {
     .modal-card-head {
         display: inline;
