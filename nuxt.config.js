@@ -43,7 +43,7 @@ module.exports = {
         { src: '~plugins/iubenda.js', ssr: false },
         { src: '~plugins/analitycs.js', ssr: false },
         { src: '~plugins/facebook.js', ssr: false },
-        { src: '~plugins/snipcart.js', ssr: false },
+        // { src: '~plugins/snipcart.js', ssr: false },
     ],
     router: {
         middleware: ['ActiveMenu', 'getSettings', 'cart']

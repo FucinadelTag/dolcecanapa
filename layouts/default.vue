@@ -9,9 +9,7 @@
                 </div>
             </div>
             <MyFooter/>
-
         </div>
-        <snipcartInclude/>
     </div>
 
 
@@ -20,14 +18,12 @@
 <script charset="utf-8">
     import MyMenu from '~/components/MyMenu.vue'
     import MyFooter from '~/components/myFooter.vue'
-    import snipcartInclude from '~/components/snipcartInclude.vue'
     import cartModal from '~/components/cartModal.vue'
 
     export default {
         components: {
             MyMenu,
             MyFooter,
-            snipcartInclude,
             cartModal
         },
         data (context) {

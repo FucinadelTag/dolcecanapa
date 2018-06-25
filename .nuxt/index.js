@@ -17,7 +17,6 @@ import nuxt_plugin_iconFont_46070458 from 'nuxt_plugin_iconFont_46070458' // Sou
 import nuxt_plugin_iubenda_bea26a1c from 'nuxt_plugin_iubenda_bea26a1c' // Source: ../plugins/iubenda.js (ssr: false)
 import nuxt_plugin_analitycs_6ccf8208 from 'nuxt_plugin_analitycs_6ccf8208' // Source: ../plugins/analitycs.js (ssr: false)
 import nuxt_plugin_facebook_6442858c from 'nuxt_plugin_facebook_6442858c' // Source: ../plugins/facebook.js (ssr: false)
-import nuxt_plugin_snipcart_5aa250c4 from 'nuxt_plugin_snipcart_5aa250c4' // Source: ../plugins/snipcart.js (ssr: false)
 
 
 // Component: <no-ssr>
@@ -163,7 +162,6 @@ async function createApp (ssrContext) {
     if (typeof nuxt_plugin_iubenda_bea26a1c === 'function') await nuxt_plugin_iubenda_bea26a1c(app.context, inject)
     if (typeof nuxt_plugin_analitycs_6ccf8208 === 'function') await nuxt_plugin_analitycs_6ccf8208(app.context, inject)
     if (typeof nuxt_plugin_facebook_6442858c === 'function') await nuxt_plugin_facebook_6442858c(app.context, inject)
-    if (typeof nuxt_plugin_snipcart_5aa250c4 === 'function') await nuxt_plugin_snipcart_5aa250c4(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first

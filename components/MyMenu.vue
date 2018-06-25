@@ -31,11 +31,11 @@
                         <div  class="navbar-item">
                                 <Cart />
                         </div>
-                        <div  class="navbar-item">
+                        <!-- <div  class="navbar-item">
                             <a href="#" class="snipcart-checkout navbar-item">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Carrello
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </nav>
                 <!-- <nav class="navbar" role="navigation" aria-label="main navigation">
