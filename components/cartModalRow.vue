@@ -138,9 +138,13 @@ export default {
     methods: {
         changeQuantity: function (newQuantita, item) {
 
-            if (newQuantita == '') {
+            console.log(newQuantita);
+
+            if (newQuantita === '') {
                 newQuantita = 1;
             }
+
+            console.log(newQuantita);
 
             let oldQuantita = item.quantita;
 
@@ -152,6 +156,7 @@ export default {
 
             const store = this.$store;
             var self = this;
+
 
 
 
