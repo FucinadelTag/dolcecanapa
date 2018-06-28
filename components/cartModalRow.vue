@@ -20,7 +20,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="column is-3">
+                        <div class="column is-5">
                             <div class="field is-horizontal">
                                 <div class="field-body">
                                     <div class="field">
