@@ -15,7 +15,7 @@
                             <div class="field is-horizontal">
                                 <div class="field-body">
                                     <div class="field">
-                                        <input class="input" :disabled="isDisabled" type="number" v-on:input="changeQuantity($event.target.value, item)" name="quantita" v-bind:value="item.quantita">
+                                        <input class="input" :disabled="isDisabled" type="number" v-on:input.stop="changeQuantity($event.target.value, item)" ref="quantita" name="quantita" v-bind:value="item.quantita">
                                     </div>
                                 </div>
                             </div>
@@ -137,6 +137,11 @@ export default {
     },
     methods: {
         changeQuantity: function (newQuantita, item) {
+
+            if (newQuantita == '') {
+                newQuantita = 1;
+            }
+
             let oldQuantita = item.quantita;
 
             if (newQuantita == oldQuantita){
@@ -156,15 +161,35 @@ export default {
                 newQuantita: newQuantita
             })
             .then(function (response) {
+
                 self.isDisabled = false;
                 //store.commit('SET_SHOWCART', true)
                 store.commit('cart/SET_CART', response.data.cartData)
                 store.commit('cart/SET_IMPORTO', response.data.cartData.importo)
+
+                self.$nextTick(() => {
+                    if (typeof self.$refs.quantita != 'undefined')
+                    {
+                        self.$refs.quantita.focus()
+                    }
+                });
+
+
+
+
+
+                //console.log(self.$refs.quantita);
+
+
+
+
             })
             .catch(function (error) {
                 self.isDisabled = false;
                 console.log(error);
             });
+
+
 
         }
     }
