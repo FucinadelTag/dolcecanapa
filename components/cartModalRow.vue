@@ -6,7 +6,7 @@
                     <img class="imgProdotto" v-bind:src="item.immagine" v-bind:alt="item.nome" />
                 </div>
                 <div class="column">
-                    <div class="title is-5 is-spaced">
+                    <div class="title is-6 is-spaced">
                         {{item.nome}}
                     </div>
 
@@ -15,7 +15,7 @@
                             <div class="field is-horizontal">
                                 <div class="field-body">
                                     <div class="field">
-                                        <input class="input" :disabled="isDisabled" type="number" v-on:change="changeQuantity($event.target.value, item)" name="quantita" v-bind:value="item.quantita">
+                                        <input class="input" :disabled="isDisabled" type="number" v-on:input="changeQuantity($event.target.value, item)" name="quantita" v-bind:value="item.quantita">
                                     </div>
                                 </div>
                             </div>

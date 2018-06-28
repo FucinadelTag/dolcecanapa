@@ -5,12 +5,12 @@
         <div class="modal-card">
             <header class="modal-card-head">
 
-                <div class="columns">
+                <div class="columns is-mobile">
                     <!-- <div class="column is-1">
                         <p class="modal-card-title"><i class="fas fa-shopping-cart"></i></p>
                     </div> -->
                     <div class="column is-11 has-vertically-aligned-content">
-                        <cartModalCallToAction />
+                        <i class="fas fa-shopping-cart"></i>&nbsp;Il tuo Carrello
                     </div>
                     <div  class="column">
                         <button class="delete" v-on:click="closeModal" aria-label="close"></button>

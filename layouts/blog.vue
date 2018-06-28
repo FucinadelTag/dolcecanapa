@@ -2,6 +2,7 @@
     <div class="default">
         <div class="container">
             <div class="content">
+                <cartModal />
                 <MyMenu/>
                 <div class="columns padding">
                     <div class="column is-two-thirds">
@@ -23,6 +24,7 @@
 
 <script charset="utf-8">
     import MyMenu from '~/components/MyMenu.vue'
+    import cartModal from '~/components/cartModal.vue'
     import bannerDestra from '~/components/bannerDestra.vue'
     import formNewsletter from '~/components/formNewsletter.vue'
     import snipcartInclude from '~/components/snipcartInclude.vue'
@@ -32,6 +34,7 @@
     export default {
         components: {
             MyMenu,
+            cartModal,
             bannerDestra,
             snipcartInclude,
             formNewsletter,
