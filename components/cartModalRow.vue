@@ -138,13 +138,9 @@ export default {
     methods: {
         changeQuantity: function (newQuantita, item) {
 
-            console.log(newQuantita);
-
             if (newQuantita === '') {
                 newQuantita = 1;
             }
-
-            console.log(newQuantita);
 
             let oldQuantita = item.quantita;
 
