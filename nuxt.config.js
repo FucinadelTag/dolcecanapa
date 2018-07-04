@@ -56,7 +56,11 @@ module.exports = {
             }
         }
     },
+    performance: {
+        gzip: false
+    },
+    dev: false,
     env: {
-        cartUrl: process.env.CART_URL || 'http://localhost:3000'
+        cartUrl: 'https://cart.dolcecanapa.it'
     }
 }

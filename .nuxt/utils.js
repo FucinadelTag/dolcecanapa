@@ -113,14 +113,14 @@ export async function setContext(app, context) {
         return process.client
       },
       isStatic: process.static,
-      isDev: true,
+      isDev: false,
       isHMR: false,
       app,
       store: app.store,
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"cartUrl":"http://localhost:3000"}
+      env: {"cartUrl":"https://cart.dolcecanapa.it"}
     }
     // Only set once
     if (context.req) app.context.req = context.req
